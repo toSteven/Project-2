@@ -11,14 +11,22 @@
 </head>
 
 <body>
-    <h1>🎮Guessing Game</h1>
-    <p>guess number from 1 to 100.</p>
-    <p>instruction: Try and guess the hidden random number, but you only have 5 tries to guess it.</p>
-    <p>Attemps: <span id="attempsDisplay">5</span> </p>
-    <input id="userInput" type="text">
-    <button id="guessBtn">Guess</button>
-    <button id="playagainBtn">Play again</button>
-    <p id="textDisplay"></p>
+    <div class="container text-center mt-5">
+        <h1>Guessing Game</h1>
+        <p>Feeling lucky try to guess the number from 1 to 100.</p>
+        <p>Attemps: <span id="attempsDisplay">5</span> </p>
+        <div class="row">
+            <!-- column for input -->
+            <div class="col-12 my-5">
+                <input id="userInput" type="text">
+            </div>
+            <!-- column for btn -->
+            <div class="col-12">
+                <button id="guessBtn">Guess</button>
+            </div>
+        </div>
+        <p id="textDisplay"></p>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
