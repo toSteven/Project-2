@@ -13,22 +13,51 @@
 </head>
 
 <body>
-    <div class="container text-center mt-5">
-        <h1>Guessing Game</h1>
+   <!-- landing page start -->
+   <!-- To do resizing, instruction read me, add some design -->
+   <!-- add some aos animate -->
+    <!-- added some with in css and text in class "box" -->
+    <div class="container-md text-center mt-5">
+       
+    <!-- added card to put inside the elements  -->
+        <div class="card shadow">
+            <div class="card-body">
+    <!-- added id for h1 for css styling --> 
+             <h1 class="fw-bold bg-primary text-white" id="bgColor">Guessing Number Game <span class="fa-regular fa-lightbulb" style="color: #fcfcfc;"></span></h1>
+    <!-- added id for p tag for css styling --> 
+              <p class="fw-bold" id="paraBg">Feeling lucky guess the number from 1 to 100.</p>
+              <hr> 
+          
+              <p>Attemps: <span id="attempsDisplay">5</span> </p>
 
-       <h1>Try lang kung mag pupull</h1>
+<<<<<<< HEAD
+            <div class="row-md">
+        
+            <!-- column for input / dinilete ko yung column -->
+=======
+        <h1>Try lang kung mag pupull</h1>
+        <h1>na recover kona</h1>
+>>>>>>> 1d2232df59fd2d638d6cc76e8123ec125af23181
 
+             <div class="col-12 w-25 p-3 text-center">
+              <input class="form-control mb-3 input-md"  id="userInput" type="text" placeholder="????????????">
+             </div>
 
-        <p>Feeling lucky try to guess the number from 1 to 100.</p>
-        <p>Attemps: <span id="attempsDisplay">5</span> </p>
-        <div class="row">
-            <!-- column for input -->
-            <div class="col-12 my-5">
-                <input id="userInput" type="text">
+             <!-- added class form control -->
+
+             </div>
+
+             <!-- column for btn -->
+             <div class="col-12">
+                 <button class="btn btn-primary mb-4" id="guessBtn"><Strong>GUESS</Stro></button>
+             </div>
+         </div>
+         <div class="card m-5">
+            <div class="card-body">
+            <p id="textDisplay"></p>  
             </div>
-            <!-- column for btn -->
-            <div class="col-12">
-                <button id="guessBtn">Guess</button>
+         </div>
+        
             </div>
          </div>
          <p class="fw-bold text-white text-center m-3"><strong>Developed by Ramos Howard & Cyrille Isayas </strong></p>
