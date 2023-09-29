@@ -1,0 +1,36 @@
+    /* backround */
+    body{
+     background-color: #4942E4 !important;
+    }
+    
+    
+    /* for container box design */
+    .container-box{
+    width: max-content;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: auto;
+    
+    }
+
+    /* added style for h1 */
+    #bgColor{
+    background-color:#11009E !important;
+    }
+
+
+    /* added style for paragraph */
+    #paraBg{
+        color: #4942E4;    
+    }
+
+    /* added style for text input */
+    #userInput{
+        
+        margin-left: 13em;
+    
+    }
+   
+   
+   

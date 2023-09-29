@@ -16,24 +16,24 @@ GUESSBTN.addEventListener('click', () => {
 
         // if ture
         if (USERGUESS === RANDOMNUMBER) {
-            textDisplay.textContent = `Congrations you guess the correct number ${RANDOMNUMBER}`;
+            textDisplay.textContent = `Congrations you guess the correct number  ${RANDOMNUMBER} 🎊`; //added some emoji
             userInput.disabled = true;
             // input success sound
         }
         // if attemps goes from 0
         else if (attemps === 0) {
-            textDisplay.textContent = `Game over the correct number is ${RANDOMNUMBER}`;
+            textDisplay.textContent = `Game over the correct number is ${RANDOMNUMBER} 😔`; //added some emoji
             userInput.disabled = true;
             // game over sound
         }
         // if input is lower
         else if (USERGUESS < RANDOMNUMBER) {
-            textDisplay.textContent = 'Try higher!';
+            textDisplay.textContent = 'Try higher! 😁'; //add one emoji
             // input error sound
         }
         // if input is higher
         else {
-            textDisplay.textContent = 'Try lower!';
+            textDisplay.textContent = 'Try lower! 😁'; //add one emoji
             // input error sound
         }
 
