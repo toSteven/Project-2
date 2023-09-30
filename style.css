@@ -1,36 +1,18 @@
     /* backround */
-    body{
-     background-color: #4942E4 !important;
-    }
-    
-    
-    /* for container box design */
-    .container-box{
-    width: max-content;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    padding: auto;
-    
+    body {
+        background-color: #4942E4 !important;
     }
 
-    /* added style for h1 */
-    #bgColor{
-    background-color:#11009E !important;
+    /* remove arrow form input */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
     }
 
-
-    /* added style for paragraph */
-    #paraBg{
-        color: #4942E4;    
+    /* tablet responsive size */
+    @media screen and (max-width:769px) {
+        #main-col {
+            max-width: 500px;
+        }
     }
-
-    /* added style for text input */
-    #userInput{
-        
-        margin-left: 13em;
-    
-    }
-   
-   
-   

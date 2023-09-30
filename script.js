@@ -1,37 +1,46 @@
 let attempsDisplay = document.querySelector('#attempsDisplay'); // get attemps id and set to new variables
 let userInput = document.querySelector('#userInput'); // get userinput id and set to new variables
 const GUESSBTN = document.querySelector('#guessBtn'); // get guessBtn id and set to new variables
-const RESETBTN = document.querySelector('#playagainBtn'); // get guessBtn id and set to new variables
 let textDisplay = document.querySelector('#textDisplay'); // get textDisplay id and set to new variables
+let randNumberPlaceholderWin = document.querySelector('#randNumberPlaceholderWin'); // get randNumberPlaceholderWin id and set to new variables
+let randNumberPlaceholderLoss = document.querySelector('#randNumberPlaceholderLoss'); // get randNumberPlaceholderLoss id and set to new variables
 
-const RANDOMNUMBER = Math.floor(Math.random() * 100) + 1; // create randomnumber
+const RANDOMNUMBER = Math.floor(Math.random() * 100) + 1; // create randomnumber and place to variable
 let attemps = 5; // create attemp counts
-// input sound
+
+// get modal by id
+const playerWin = new bootstrap.Modal(document.querySelector('#playerWin'));
+const playerLoss = new bootstrap.Modal(document.querySelector('#playerLoss'));
+
+console.log(RANDOMNUMBER);
 
 GUESSBTN.addEventListener('click', () => {
     if (userInput.value) {
-        const USERGUESS = parseInt(userInput.value); // convert text input to integer
-        attemps--; // decrement attemps evry guess input
+        const USERGUESS = userInput.value; // convert float input to integer
+        attemps--; // decrement attemps every guess input
         attempsDisplay.textContent = attemps; // show the attemps remaining
 
-        // if ture
+        // user guess true
         if (USERGUESS === RANDOMNUMBER) {
-            textDisplay.textContent = `Congrations you guess the correct number  ${RANDOMNUMBER} 🎊`; //added some emoji
             userInput.disabled = true;
+            playerWin.show();
+            randNumberPlaceholderWin.textContent = `${RANDOMNUMBER}`;
             // input success sound
+
         }
-        // if attemps goes from 0
+        // attemps goes to 0
         else if (attemps === 0) {
-            textDisplay.textContent = `Game over the correct number is ${RANDOMNUMBER} 😔`; //added some emoji
             userInput.disabled = true;
+            playerLoss.show();
+            randNumberPlaceholderLoss.textContent = `${RANDOMNUMBER}`;
             // game over sound
         }
-        // if input is lower
+        // user guess is lower
         else if (USERGUESS < RANDOMNUMBER) {
             textDisplay.textContent = 'Try higher! 😁'; //add one emoji
             // input error sound
         }
-        // if input is higher
+        // user guess is higher
         else {
             textDisplay.textContent = 'Try lower! 😁'; //add one emoji
             // input error sound
@@ -39,12 +48,10 @@ GUESSBTN.addEventListener('click', () => {
 
     }
     else {
-        textDisplay.textContent = 'Input number from 1-100!';
+        textDisplay.textContent = 'Input number from 1-100';
     }
 
     userInput.value = '';
 });
 
-RESETBTN.addEventListener('click', () => {
-    location.reload();
-});
+
