@@ -1,116 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guessing Game</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Guessing Number Game❔</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- added internal css -->
+    <style>
+        #fit-content{
+            width: max-content;
+        }
+    </style>
 </head>
-
 <body>
-    <!-- landing page start -->
-    <!-- To do resizing, instruction read me, add some design -->
-    <!-- add some aos animate -->
-    <!-- added some with in css and text in class "box" -->
+    <!-- to do add some pictures -->
+    <!-- sounds in js -->
+    <!-- more estetik vibes -->
 
-    <main class="container text-center mt-5">
 
-        <div class="row justify-content-center ">
-
-            <!-- main col -->
-            <div id="main-col" class="col-lg-4">
-                <!-- main card -->
-                <div class="card">
-                    <!-- main card-body -->
-                    <div class="card-body">
-                        <!-- game title -->
-                        <h1 class="fw-bold bg-primary text-white rounded p-3" id="bgColor">Guessing Number Game
-                            <span class="fa-regular fa-lightbulb" style="color: #fcfcfc;"></span>
-                        </h1>
-
-                        <!-- sub txt -->
-                        <p class="fw-bold m-3">Feeling lucky guess the number from 1 to 100.</p>
-
-                        <!-- attemps remaining -->
-                        <p class="fw-bold">Attemps: <span id="attempsDisplay">5</span> </p>
-
-                        <!-- input -->
-                        <div class="row m-5">
-                            <div class="col-12">
-                                <input id="userInput" class="w-26 fs-1 fw-bold text-center" type="number" min="1"
-                                    max="100">
-                            </div>
-                        </div>
-
-                        <!-- guess btn -->
-                        <button class="btn btn-primary" id="guessBtn"><Strong>GUESS</Stro></button>
-
-                        <!-- hint paragraph -->
-                        <hr>
-                        <p id="textDisplay" class="m-4"></p>
-
-                    </div>
-                </div>
+    <!-- landing page -->
+    <!-- added temporary aos effect -->
+<div class="container" data-aos="fade-up"
+data-aos-duration="3000">
+    <main id="fit-content" class="landing container mt-5 pt-5 text-center" >
+        <div class="card shadow">
+            <div class="card-body">
+              <h1 class="bg-primary fw-bold text-white rounded p-3">Guessing Number <br>
+                 Game<span class="fa-regular fa-lightbulb" style="color: #ffffff;"></span></h1>
+              <!-- added href to link main content -->
+              <a href="main.html"><button class="btn btn-primary fw-bold mt-3">START</button></a>
             </div>
-
-            <p class="fw-bold text-white text-center m-3"><strong>Developed by Ramos Howard & Cyrille Isayas
-                </strong></p>
         </div>
-
-
-
-        <!-- player win modal -->
-        <section class="modal fade" id="playerWin" data-bs-backdrop="static" data-bs-keyboard="false">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-body p-5 text-center">
-                        <h1 class="fw-bold">CONGRATULATIONS</h1>
-                        <p class="m-3">You guess the right number</p>
-                        <h1 id="randNumberPlaceholderWin" class="m-3"></h1>
-                        <a href="index.html"><button type="button" class="btn btn-success" data-bs-dismiss="modal">Guess
-                                again</button></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- player loss modal -->
-        <section class="modal fade" id="playerLoss" data-bs-backdrop="static" data-bs-keyboard="false">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-body p-5 text-center">
-                        <h1 class="fw-bold">Game Over</h1>
-                        <p class="m-3">The right number</p>
-                        <h1 id="randNumberPlaceholderLoss" class="m-3"></h1>
-                        <a href="index.html"><button type="button" class="btn btn-success" data-bs-dismiss="modal">Guess
-                                again</button></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+        <p class="fw-bold text-white text-center m-3"><strong>Developed by Ramos Howard & Cyrille Isayas 💻
+        </strong></p>
     </main>
+</div> 
 
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
-
-    <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
 </body>
-
 </html>
