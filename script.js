@@ -16,7 +16,7 @@ console.log(RANDOMNUMBER);
 
 GUESSBTN.addEventListener('click', () => {
     if (userInput.value) {
-        const USERGUESS = userInput.value; // convert float input to integer
+        const USERGUESS = parseInt(userInput.value); // convert float input to integer
         attemps--; // decrement attemps every guess input
         attempsDisplay.textContent = attemps; // show the attemps remaining
 
