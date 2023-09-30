@@ -23,7 +23,7 @@ bga.loop = true;
 bga.play();
 
 //console.log(RANDOMNUMBER);
-
+// kambing
 GUESSBTN.addEventListener('click', () => {
     if (userInput.value) {
         const USERGUESS = parseInt(userInput.value); // convert float input to integer
