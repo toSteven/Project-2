@@ -12,7 +12,17 @@ let attemps = 5; // create attemp counts
 const playerWin = new bootstrap.Modal(document.querySelector('#playerWin'));
 const playerLoss = new bootstrap.Modal(document.querySelector('#playerLoss'));
 
-console.log(RANDOMNUMBER);
+// sound effects
+let gameover = new Audio('audio/gameover.wav');
+let winnerWow = new Audio('audio/wow.wav');
+let again = new Audio('audio/again.wav');
+let bga = new Audio('audio/bga.wav');
+
+bga.volume = 0.2; // audio volume set to 20%
+bga.loop = true;
+bga.play();
+
+//console.log(RANDOMNUMBER);
 
 GUESSBTN.addEventListener('click', () => {
     if (userInput.value) {
@@ -22,36 +32,44 @@ GUESSBTN.addEventListener('click', () => {
 
         // user guess true
         if (USERGUESS === RANDOMNUMBER) {
-            userInput.disabled = true;
-            playerWin.show();
-            randNumberPlaceholderWin.textContent = `${RANDOMNUMBER}`;
-            // input success sound
-
+            userInput.disabled = true; // disable the input
+            winnerWow.volume = 0.2; // audio volume set to 20%
+            winnerWow.play(); // play audio
+            playerWin.show(); // show modal
+            randNumberPlaceholderWin.textContent = `${RANDOMNUMBER}`; // show text display
         }
         // attemps goes to 0
         else if (attemps === 0) {
-            userInput.disabled = true;
-            playerLoss.show();
-            randNumberPlaceholderLoss.textContent = `${RANDOMNUMBER}`;
-            // game over sound
+            userInput.disabled = true; // disable the input
+            gameover.volume = 0.2; // audio volume set to 20%
+            gameover.play(); // play audio
+            playerLoss.show(); // show modal
+            randNumberPlaceholderLoss.textContent = `${RANDOMNUMBER}`; // show text display
         }
         // user guess is lower
         else if (USERGUESS < RANDOMNUMBER) {
-            textDisplay.textContent = 'Try higher! 😁'; //add one emoji
-            // input error sound
+            again.volume = 0.2; // audio volume set to 20%
+            again.play(); // play audio
+            textDisplay.textContent = 'Try higher! 😁'; // show text display
         }
         // user guess is higher
         else {
-            textDisplay.textContent = 'Try lower! 😁'; //add one emoji
-            // input error sound
+            again.volume = 0.2; // audio volume set to 20%
+            again.play(); // play audio
+            textDisplay.textContent = 'Try lower! 😁'; // show text display
         }
 
     }
     else {
-        textDisplay.textContent = 'Input number from 1-100';
+        again.volume = 0.2; // audio volume set to 20%
+        again.play(); // play audio
+        textDisplay.textContent = 'Input number from 1-100'; // show text display
     }
 
-    userInput.value = '';
+    userInput.value = ''; // clear input
 });
+
+
+
 
 
