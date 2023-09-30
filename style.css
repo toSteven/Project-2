@@ -10,10 +10,15 @@
         margin: 0;
     }
 
+    /* remove underline from a tag */
+    #gotoHome,
+    a:link {
+        text-decoration: none;
+    }
+
     /* tablet responsive size */
     @media screen and (max-width:769px) {
-        #main-col {
+        .custom-col {
             max-width: 500px;
         }
     }
-    
