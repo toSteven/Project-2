@@ -22,7 +22,7 @@ bga.volume = 0.2; // audio volume set to 20%
 bga.loop = true;
 bga.play();
 
-//console.log(RANDOMNUMBER);
+console.log(RANDOMNUMBER);
 // kambing
 GUESSBTN.addEventListener('click', () => {
     if (userInput.value) {
@@ -33,7 +33,7 @@ GUESSBTN.addEventListener('click', () => {
         // user guess true
         if (USERGUESS === RANDOMNUMBER) {
             userInput.disabled = true; // disable the input
-            winnerWow.volume = 0.2; // audio volume set to 20%
+            winnerWow.volume = 0.7; // audio volume set to 70%
             winnerWow.play(); // play audio
             playerWin.show(); // show modal
             randNumberPlaceholderWin.textContent = `${RANDOMNUMBER}`; // show text display
@@ -41,27 +41,27 @@ GUESSBTN.addEventListener('click', () => {
         // attemps goes to 0
         else if (attemps === 0) {
             userInput.disabled = true; // disable the input
-            gameover.volume = 0.2; // audio volume set to 20%
+            gameover.volume = 0.5; // audio volume set to 50%
             gameover.play(); // play audio
             playerLoss.show(); // show modal
             randNumberPlaceholderLoss.textContent = `${RANDOMNUMBER}`; // show text display
         }
         // user guess is lower
         else if (USERGUESS < RANDOMNUMBER) {
-            again.volume = 0.2; // audio volume set to 20%
+            again.volume = 0.5; // audio volume set to 50%
             again.play(); // play audio
             textDisplay.textContent = 'Try higher! 😁'; // show text display
         }
         // user guess is higher
         else {
-            again.volume = 0.2; // audio volume set to 20%
+            again.volume = 0.5; // audio volume set to 50%
             again.play(); // play audio
             textDisplay.textContent = 'Try lower! 😁'; // show text display
         }
 
     }
     else {
-        again.volume = 0.2; // audio volume set to 20%
+        again.volume = 0.3; // audio volume set to 50%
         again.play(); // play audio
         textDisplay.textContent = 'Input number from 1-100'; // show text display
     }
