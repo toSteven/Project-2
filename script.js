@@ -22,7 +22,7 @@ bga.volume = 0.2; // audio volume set to 20%
 bga.loop = true;
 bga.play();
 
-console.log(RANDOMNUMBER);
+// console.log(RANDOMNUMBER);
 // kambing
 GUESSBTN.addEventListener('click', () => {
     if (userInput.value) {
